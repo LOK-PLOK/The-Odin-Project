@@ -1,0 +1,48 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 0px 0px; 
+    
+}
+
+.header .options{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+
+.scores{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin: 30px;
+}
+.scores #playerscore{
+    color: blue;
+}
+.scores #computerScore{
+    color: red;
+}
+
+
+.choices{
+    display: flex;
+    justify-content:center;
+    margin: 50px;    
+    gap: 50px;
+}
+.choices button{
+    padding: 10px 20px 10px 20px;
+}
+.status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
