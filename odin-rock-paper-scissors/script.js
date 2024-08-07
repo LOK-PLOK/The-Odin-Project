@@ -31,7 +31,7 @@ statusContainer.appendChild(gameStatus);
 
 
 const getComputerChoice = () => {
-    return Math.floor(Math.random() * 3);
+    return Math.floor(Math.random() * 10 % 3);
 };
 const choices = [rock, paper, scissors];
 const playGame = (playerpick, computerpick) => {
@@ -53,7 +53,7 @@ const playGame = (playerpick, computerpick) => {
 
     if (computerpick === playerpick) {
         roundStatus.textContent = "SAD DAYS, IT'S A DRAW XD";
-    } else if (computerpick === playerpick + 1 || (computerpick === 0 && playerpick === 2)) {
+    } else if ((computerpick === 0 && playerpick === 2) || computerpick === 1 && playerpick === 0 || computerpick === 2 && playerpick === 1) {
         computer++;
         roundStatus.textContent = "YOU LOST :( GGS";
     } else {
