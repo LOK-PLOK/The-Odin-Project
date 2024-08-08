@@ -1,23 +1,33 @@
-const container = document.querySelector(".container");
-const grid = document.createElement('div');
-const reset = document.createElement('button');
-grid.classList.add("grid");
-reset.classList.add("reset");
-reset.textContent = "Reset";
+const clear = document.querySelector(".reset");
+const size = 16;
+const sizeofContainer = 400;
+// const ChangeSize = () => {
+//     document.querySelector("#slider").innerHTML =
+// }
 
-container.appendChild(grid);
-container.appendChild(reset);
+function color(cell){
+    cell.style['background-color'] = "black";
+}
 
-
-for (let i = 0; i < 16 ; i++) {
-    for(let j = 0; j< 16; j++){
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        grid.appendChild(cell);
+const gridarea = (size) => {
+    const container = document.querySelector(".container");
+    const grid = document.createElement('div');
+    grid.classList.add("grid"); 
+    container.appendChild(grid);
+    for (let i = 0; i < size ; i++) {
+        for(let j = 0; j< size; j++){
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            grid.appendChild(cell);
+            cell.addEventListener("mouseover", () => color(cell));
+        }
     }
 }
 
-const clear = document.querySelector(".reset");
+gridarea(size);
+
+
+
 
 
 function clearBoard(){
